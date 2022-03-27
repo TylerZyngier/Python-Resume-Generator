@@ -1,4 +1,4 @@
-# python-resume-generator
+# Python-Resume-Generator
 
 A simple python app that generates a basic resume
 
