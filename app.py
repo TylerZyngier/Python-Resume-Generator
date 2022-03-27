@@ -42,7 +42,7 @@ add_experience()
 
 while True:
     has_more_experience = input(
-        'Do you have more work experience? (Yes or No) ')
+        '\nDo you have more work experience? (Yes or No) ')
 
     if has_more_experience.lower() == 'yes':
         add_experience()
@@ -57,17 +57,16 @@ document.add_heading('Skills')
 
 
 def add_skill():
-    skill = input('Enter a skill you have: ')
+    skill = input('\nEnter a skill you have: ')
     p = document.add_paragraph(skill)
     p.style = 'List Bullet'
 
 
-print('\n')
 add_skill()
 
 while True:
     has_more_skills = input(
-        'Do you have more skills? (Yes or No) ')
+        '\nDo you have more skills? (Yes or No) ')
 
     if has_more_skills.lower() == 'yes':
         add_skill()
@@ -81,7 +80,7 @@ while True:
 section = document.sections[0]
 footer = section.footer
 p = footer.paragraphs[0]
-p.text = "Resume generated with Python Resume Generator Project by Tyler Zyngier"
+p.text = "Resume generated with Python Resume Generator by Tyler Zyngier"
 
 # save the document
 document.save('resume.docx')
