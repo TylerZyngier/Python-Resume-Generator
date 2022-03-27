@@ -5,12 +5,6 @@ from docx.shared import Inches
 
 document = Document()
 
-# add profile picture
-document.add_picture(
-    'Images/ProfilePicture.png',
-    width=Inches(1.5)
-)
-
 # name, phone number, and email details
 name = input('Your name: ')
 phone_number = input('Your phone number: ')
@@ -22,7 +16,7 @@ document.add_paragraph(
 # about me
 document.add_heading('About Me')
 document.add_paragraph(
-    input('Tell me about yourself: ')
+    input('\nTell me about yourself: ')
 )
 
 # work experience
@@ -63,11 +57,12 @@ document.add_heading('Skills')
 
 
 def add_skill():
-    skill = input('Enter skill: ')
+    skill = input('Enter a skill you have: ')
     p = document.add_paragraph(skill)
     p.style = 'List Bullet'
 
 
+print('\n')
 add_skill()
 
 while True:
@@ -86,7 +81,7 @@ while True:
 section = document.sections[0]
 footer = section.footer
 p = footer.paragraphs[0]
-p.text = "Resume generated with Python code"
+p.text = "Resume generated with Python Resume Generator Project by Tyler Zyngier"
 
 # save the document
 document.save('resume.docx')
